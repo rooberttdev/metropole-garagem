@@ -14,10 +14,9 @@ interface Vehicle {
 const VehicleCard: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [vehicle, setVehicle] = useState<Vehicle | null>(null);
-  const navigate = useNavigate(); // Hook para navegação
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    // Fetch vehicle details from the API
     fetch(`/api/vehicles/${id}`)
       .then((response) => response.json())
       .then((data) => setVehicle(data))
@@ -29,12 +28,11 @@ const VehicleCard: React.FC = () => {
   }
 
   const handleSpawn = () => {
-    // Add functionality to spawn the vehicle
     console.log(`Spawn vehicle with plate: ${vehicle.placa}`);
   };
 
   const handleBack = () => {
-    navigate('/'); // Navega de volta para a lista de veículos
+    navigate('/'); 
   };
 
   return (

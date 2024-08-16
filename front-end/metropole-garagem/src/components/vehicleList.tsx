@@ -1,4 +1,3 @@
-// src/components/VehicleList.tsx
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +14,6 @@ const VehicleList: React.FC = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
 
   useEffect(() => {
-    // Fetch vehicles from the API
     fetch('/api/vehicles')
       .then((response) => response.json())
       .then((data) => setVehicles(data))
